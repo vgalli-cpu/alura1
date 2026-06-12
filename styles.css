@@ -1,0 +1,102 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    max-width: 600px;
+    animation: fadeIn 0.8s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h1 {
+    color: #333;
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.subtitle {
+    color: #666;
+    font-size: 1.1em;
+    margin-bottom: 30px;
+    font-style: italic;
+}
+
+.mona-lisa {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border: 8px solid #8B7355;
+    border-radius: 10px;
+    background: white;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.mona-lisa:hover {
+    transform: scale(1.02);
+}
+
+/* Classes para as íris que se movem */
+.iris-esquerda,
+.iris-direita {
+    transition: transform 0.05s linear;
+    transform-origin: center;
+}
+
+/* Efeito de brilho ao passar o mouse */
+@media (hover: hover) {
+    .mona-lisa:hover {
+        filter: brightness(1.05) drop-shadow(0 0 20px rgba(102, 126, 234, 0.4));
+    }
+}
+
+/* Responsivo para mobile */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+    }
+    
+    h1 {
+        font-size: 2em;
+    }
+    
+    .subtitle {
+        font-size: 0.95em;
+    }
+    
+    .mona-lisa {
+        max-width: 300px;
+    }
+}
